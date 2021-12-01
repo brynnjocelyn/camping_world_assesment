@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <h1>Camping world assessment</h1>
+
+  <input type="file" (change)="convertFile($event)" id="fileInput" />
+
+  <div class="table-wrapper">
+    <input
+      #filterTextBox
+      type="text"
+      id="filter-text-box"
+      placeholder="Filter..."
+      (input)="onFilterTextBoxChanged()"
+    />
+    <ag-grid-angular
+      style="width: 900px; height: 500px"
+      class="ag-theme-alpine"
+      [gridOptions]="gridOptions"
+      (gridReady)="onGridReady($event)"
+    >
+    </ag-grid-angular>
+  </div>
+</div>
